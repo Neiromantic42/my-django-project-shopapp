@@ -1,0 +1,23 @@
+{% extends 'admin/base.html' %}
+{# Наследуем стандартный шаблон админки Django, чтобы сохранить стиль #}
+{% block content %}
+{# Начинаем блок content, который заменит одноимённый блок в base.html #}
+    <div>
+    {# Обёртка для формы, можно стилизовать при необходимости #}
+        <form action="." method="post" enctype="multipart/form-data">
+        {# Форма отправляется на текущий URL (action=".") #}
+        {# method="post" — данные отправляются методом POST #}
+        {# enctype="multipart/form-data" — обязательно для загрузки файлов #}
+            {% csrf_token %}
+            {# Вставляем токен CSRF для защиты от подделки форм #}
+            {{ form.as_p }}
+            {# Рендерим форму Django в виде параграфов <p>, одно поле — один <p> #}
+            <div class="submit-row">
+            {# Контейнер для кнопки submit (стиль админки) #}
+                <input type="submit" value="Upload File">
+                {# Кнопка отправки формы с текстом "Upload CSV" #}
+            </div>
+        </form>
+    </div>
+{% endblock %}
+{# Конец блока content #}

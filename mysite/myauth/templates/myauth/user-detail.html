@@ -1,0 +1,33 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+    User detail # {{ user.pk }}
+{% endblock %}
+
+{% block body %}
+    <h1>User <strong>{{ user.username }}</strong></h1>
+
+    {% if user.profile.avatar %}
+        <img src="{{ user.profile.avatar.url }}" alt="{{ user.first_name }}"
+             width="150"
+             height="150"
+        >
+    {% else %}
+        <p>Аватар не загружен!</p>
+    {% endif %}
+    <div>
+        <div>First name: {{ user.first_name }}</div>
+        <div>Last name: {{ user.last_name }}</div>
+        <div>Email: {{ user.email }}</div>
+        <div>Bio: {{ user.profile.bio }}</div>
+    </div>
+    {% if request.user.is_staff or request.user == user %}
+        <a href="{% url 'myauth:profile-update' pk=user.profile.pk %}">
+        Редактировать профиль: {{ user.first_name }}
+        </a>
+    {% endif %}
+    <div>
+        <a href="{% url 'myauth:users-page' %}" style="color: #3d52fe">
+            Назад, ко всем пользователям</a>
+    </div>
+{% endblock %}

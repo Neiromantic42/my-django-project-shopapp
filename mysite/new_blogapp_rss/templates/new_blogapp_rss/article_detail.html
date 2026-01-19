@@ -1,0 +1,19 @@
+{% extends 'new_blogapp_rss/base.html' %}
+
+{% block title %}
+    Article #{{ article.pk }}
+{% endblock %}
+
+{% block body %}
+    <h1>Article</h1>
+    {% if article %}
+        <div>
+            <p>{{ article.title }}</p>
+            <p>Published: {{ article.published_at}}</p>
+            <p>{{ article.body }}</p>
+        </div>
+    {% endif %}
+    <div>
+    <a href="{% url 'new_blogapp_rss:articles' %}">Back to articles list</a>
+    </div>
+{% endblock %}

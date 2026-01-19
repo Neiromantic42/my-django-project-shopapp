@@ -1,0 +1,51 @@
+{% extends 'myauth/base.html' %}
+
+{% load cache%}
+
+{% block title %}
+	About me
+{% endblock %}
+
+{% block body %}
+	<h1>User info</h1>
+    <div>
+        Случайно сгенерированное число: {% now "u" %}
+    </div>
+    <div>
+        <h2>Обновление аватара</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <button type="submit">
+                Create/Edit Avatar
+            </button>
+        </form>
+    </div>
+
+    {% if user.is_authenticated %}
+        {% cache 60 user_info user.username %}
+            <h2>Detail</h2>
+            {% if user.profile.avatar %}
+                <img src="{{ user.profile.avatar.url }}" alt="{{ user.first_name}}"
+                     width="150"
+                     height="150"
+                >
+            {% else %}
+                <p>Аватар не загружен!</p>
+            {% endif %}
+            <p>Username: {{ user.username }}</p>
+            <p>First name: {{ user.first_name }}</p>
+            <p>Last name: {{ user.last_name }}</p>
+            <p>Email: {{ user.email }}</p>
+            <p>Bio: {{ user.profile.bio }}</p>
+        {% endcache %}
+    {% else %}
+        <h2>User is anonymous</h2>
+    {% endif %}
+    <div>
+        <a href="{% url 'myauth:users-page' %}" style="color: chartreuse">
+            Ко всем профилям
+        </a>
+    </div>
+{% endblock %}

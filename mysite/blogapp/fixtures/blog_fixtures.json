@@ -1,0 +1,132 @@
+[
+  {
+    "model": "blogapp.author",
+    "pk": 1,
+    "fields": {
+      "name": "Ivan Petrov",
+      "bio": "Author of tech articles and tutorials."
+    }
+  },
+  {
+    "model": "blogapp.author",
+    "pk": 2,
+    "fields": {
+      "name": "Maria Ivanova",
+      "bio": "Writes about lifestyle and culture."
+    }
+  },
+  {
+    "model": "blogapp.author",
+    "pk": 3,
+    "fields": {
+      "name": "Alex Smirnov",
+      "bio": "Focus on science and research topics."
+    }
+  },
+  {
+    "model": "blogapp.category",
+    "pk": 1,
+    "fields": {
+      "name": "Technology"
+    }
+  },
+  {
+    "model": "blogapp.category",
+    "pk": 2,
+    "fields": {
+      "name": "Lifestyle"
+    }
+  },
+  {
+    "model": "blogapp.category",
+    "pk": 3,
+    "fields": {
+      "name": "Science"
+    }
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 1,
+    "fields": {"name": "Python"}
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 2,
+    "fields": {"name": "Django"}
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 3,
+    "fields": {"name": "Health"}
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 4,
+    "fields": {"name": "Research"}
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 5,
+    "fields": {"name": "AI"}
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 1,
+    "fields": {
+      "title": "Intro to Python",
+      "content": "Python basics and syntax explained.",
+      "pub_date": "2025-12-17T10:00:00Z",
+      "author": 1,
+      "category": 1,
+      "tags": [1, 2, 5]
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 2,
+    "fields": {
+      "title": "Healthy Lifestyle Tips",
+      "content": "How to stay healthy and active.",
+      "pub_date": "2025-12-16T12:00:00Z",
+      "author": 2,
+      "category": 2,
+      "tags": [3]
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 3,
+    "fields": {
+      "title": "AI in Science",
+      "content": "Exploring AI applications in research.",
+      "pub_date": "2025-12-15T09:30:00Z",
+      "author": 3,
+      "category": 3,
+      "tags": [4,5]
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 4,
+    "fields": {
+      "title": "Advanced Django",
+      "content": "Django ORM and optimization tips.",
+      "pub_date": "2025-12-14T14:15:00Z",
+      "author": 1,
+      "category": 1,
+      "tags": [2,5]
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 5,
+    "fields": {
+      "title": "Research Methods 101",
+      "content": "Basics of conducting scientific research.",
+      "pub_date": "2025-12-13T11:45:00Z",
+      "author": 3,
+      "category": 3,
+      "tags": [4]
+    }
+  }
+]

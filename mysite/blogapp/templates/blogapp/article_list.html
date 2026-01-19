@@ -1,0 +1,61 @@
+{% extends 'blogapp/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Articles list
+{% endblock %}
+
+{% block head %}
+<style>
+.article{
+    display: flex;
+    flex-wrap: wrap;          /* чтобы карточки переносились на новую строку */
+    gap: 20px;                /* расстояние между карточками */
+    justify-content: center;  /* центрируем все карточки по горизонтали */
+    padding: 20px;
+}
+
+.article {
+    background: rgba(255, 255, 255, 0.1); /* прозрачный белый фон */
+    backdrop-filter: blur(10px);          /* размытие подложки */
+    -webkit-backdrop-filter: blur(10px);  /* для Safari */
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    width: 300px;           /* фиксированная ширина карточки */
+    padding: 20px;
+    color: #f8f9fa;            /* текст светлый для контраста */
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.article {
+    margin: 0 0 10px 0;
+    line-height: 25px;
+}
+
+body {
+    background: url("{% static 'img/glemping.jpg' %}") no-repeat center center fixed; /* можно добавить красивый фон */
+    background-size: cover;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+    {% if articles %}
+        <div>
+            {% for article in articles %}
+                <p class="article">
+                    Заголовок Статьи: {{ article.title }}<br>
+                    Дата публикации: {{ article.pub_date }}<br>
+                    Имя автора: {{ article.author }}<br>
+                    Категория: {{ article.category }}<br>
+                    Теги:
+                    {% for tag in article.tags.all %}
+                        {{ tag.name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

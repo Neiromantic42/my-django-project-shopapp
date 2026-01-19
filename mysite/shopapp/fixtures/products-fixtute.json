@@ -1,0 +1,198 @@
+[
+  {
+    "model": "shopapp.product",
+    "pk": 1,
+    "fields": {
+      "name": "Macbook",
+      "description": "Ноутбук Мак бук",
+      "price": "200000.00",
+      "discount": 5,
+      "created_by": null,
+      "created_at": "2025-08-29T11:33:11.273Z",
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 7,
+    "fields": {
+      "name": "Iphone 17",
+      "description": "smartphone",
+      "price": "100000.00",
+      "discount": 10,
+      "created_by": null,
+      "created_at": "2025-09-23T10:49:16.450Z",
+      "archived": false,
+      "preview": "products/product_7/preview/blyIphone.png"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 8,
+    "fields": {
+      "name": "Ipad Air",
+      "description": "Просто хуета, кусок дерьма!",
+      "price": "87990.00",
+      "discount": 50,
+      "created_by": null,
+      "created_at": "2025-09-24T10:29:47.603Z",
+      "archived": true,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 10,
+    "fields": {
+      "name": "JBL speaker",
+      "description": "Stereo speaker for listening to copper",
+      "price": "12500.00",
+      "discount": 5,
+      "created_by": null,
+      "created_at": "2025-09-25T10:39:51.832Z",
+      "archived": false,
+      "preview": "products/product_10/preview/JBL.webp"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 15,
+    "fields": {
+      "name": "HyperX cloud ll",
+      "description": "наушники игровые Проводная Игровая гарнитура с микрофоном , Красная",
+      "price": "16582.00",
+      "discount": 13,
+      "created_by": null,
+      "created_at": "2025-09-25T11:31:02.068Z",
+      "archived": false,
+      "preview": "products/product_15/preview/ae67d26b764e1a6d60d28a5bfcdea6b1-600x600.jpg"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 17,
+    "fields": {
+      "name": "Screen protector for iPhone 14 Plus",
+      "description": "Защитное стекло на айфон",
+      "price": "1000.00",
+      "discount": 0,
+      "created_by": null,
+      "created_at": "2025-10-23T10:46:06.574Z",
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 18,
+    "fields": {
+      "name": "Iphone 16 PRO MAX",
+      "description": "A smartphone with 1 terabyte of internal memory and a titanium case.",
+      "price": "120000.00",
+      "discount": 15,
+      "created_by": null,
+      "created_at": "2025-11-08T11:46:30.354Z",
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 19,
+    "fields": {
+      "name": "Apple AirPods pro 3",
+      "description": "Беспроводные наушники, белые",
+      "price": "26399.00",
+      "discount": 50,
+      "created_by": 2,
+      "created_at": "2025-11-10T10:50:07.425Z",
+      "archived": false,
+      "preview": "products/product_19/preview/111.jpg_500_iRGSr1G.webp"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 22,
+    "fields": {
+      "name": "Xiaomi 15T Pro",
+      "description": "Xiaomi Смартфон Xiaomi 15T Pro Ростест (EAC) 12/512 ГБ, черный",
+      "price": "74990.00",
+      "discount": 10,
+      "created_by": 1,
+      "created_at": "2025-11-19T15:15:51.577Z",
+      "archived": false,
+      "preview": "products/product_None/preview/xiami_p.webp"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 24,
+    "fields": {
+      "name": "Smartwatches - mi band 10 ceramic version",
+      "description": "Спортивный браслет mi band 10 к керамическом корпусе",
+      "price": "6000.00",
+      "discount": 5,
+      "created_by": 1,
+      "created_at": "2025-12-04T11:13:05.619Z",
+      "archived": false,
+      "preview": "products/product_None/preview/Smartwatches_-_mi_band_10_ceramic_v.webp"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 25,
+    "fields": {
+      "name": "DJI Mini 3",
+      "description": "Мини квадрокоптер DJI Mini 3 c пультом DJI RC (НЕ PRO)",
+      "price": "49000.00",
+      "discount": 10,
+      "created_by": 1,
+      "created_at": "2025-12-04T11:32:16.256Z",
+      "archived": false,
+      "preview": "products/product_None/preview/dgi.webp"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 32,
+    "fields": {
+      "name": "Smartphone 1",
+      "description": "",
+      "price": "199.00",
+      "discount": 0,
+      "created_by": null,
+      "created_at": "2025-12-16T09:58:09.549Z",
+      "archived": true,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 33,
+    "fields": {
+      "name": "Smartphone 2",
+      "description": "",
+      "price": "299.00",
+      "discount": 0,
+      "created_by": null,
+      "created_at": "2025-12-16T09:58:09.549Z",
+      "archived": true,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 34,
+    "fields": {
+      "name": "Smartphone 3",
+      "description": "",
+      "price": "399.00",
+      "discount": 0,
+      "created_by": null,
+      "created_at": "2025-12-16T09:58:09.549Z",
+      "archived": true,
+      "preview": ""
+    }
+  }
+]

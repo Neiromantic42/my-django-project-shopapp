@@ -1,0 +1,356 @@
+[
+{
+  "model": "shopapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "Laptop",
+    "description": "Текст - описание продукта.",
+    "price": "1999.00",
+    "discount": 0,
+    "created_by": null,
+    "created_at": "2025-08-29T11:33:11.273Z",
+    "archived": true
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 5,
+  "fields": {
+    "name": "Smartwatches - mi band 10 ceramic version",
+    "description": "Умные часы в керамическом корпусе, с водозащийтой aps 160",
+    "price": "5600.00",
+    "discount": 10,
+    "created_by": null,
+    "created_at": "2025-09-09T10:13:41.975Z",
+    "archived": false
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 7,
+  "fields": {
+    "name": "Iphone 17",
+    "description": "smartphone",
+    "price": "100000.00",
+    "discount": 0,
+    "created_by": null,
+    "created_at": "2025-09-23T10:49:16.450Z",
+    "archived": false
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 8,
+  "fields": {
+    "name": "Ipad Air",
+    "description": "Просто хуета, кусок дерьма!",
+    "price": "87990.00",
+    "discount": 50,
+    "created_by": null,
+    "created_at": "2025-09-24T10:29:47.603Z",
+    "archived": true
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 9,
+  "fields": {
+    "name": "Augmented reality glasses",
+    "description": "Augmented reality glasses with an on-board video camera and over-the-ear speakers",
+    "price": "67780.20",
+    "discount": 42,
+    "created_by": null,
+    "created_at": "2025-09-25T10:34:28.276Z",
+    "archived": true
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 10,
+  "fields": {
+    "name": "JBL speaker",
+    "description": "Stereo speaker for listening to copper",
+    "price": "12500.00",
+    "discount": 5,
+    "created_by": null,
+    "created_at": "2025-09-25T10:39:51.832Z",
+    "archived": false
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 15,
+  "fields": {
+    "name": "HyperX cloud ll",
+    "description": "наушники игровые Проводная Игровая гарнитура с микрофоном , Красная",
+    "price": "16582.00",
+    "discount": 10,
+    "created_by": null,
+    "created_at": "2025-09-25T11:31:02.068Z",
+    "archived": false
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 17,
+  "fields": {
+    "name": "Screen protector for iPhone 14 Plus",
+    "description": "Защитное стекло на айфон",
+    "price": "1000.00",
+    "discount": 0,
+    "created_by": null,
+    "created_at": "2025-10-23T10:46:06.574Z",
+    "archived": false
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 18,
+  "fields": {
+    "name": "Iphone 16 PRO MAX",
+    "description": "A smartphone with 1 terabyte of internal memory and a titanium case.",
+    "price": "120000.00",
+    "discount": 15,
+    "created_by": 4,
+    "created_at": "2025-11-08T11:46:30.354Z",
+    "archived": false
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 19,
+  "fields": {
+    "name": "Apple AirPods pro 3",
+    "description": "Беспроводные наушники, белые",
+    "price": "26399.00",
+    "discount": 50,
+    "created_by": 2,
+    "created_at": "2025-11-10T10:50:07.425Z",
+    "archived": false
+  }
+},
+{
+  "model": "shopapp.order",
+  "pk": 14,
+  "fields": {
+    "delivery_address": "Город Лаишево Улица Горького Дом 66А Квартира 17",
+    "promocode": "zsdfg128764",
+    "created_at": "2025-11-07T09:39:24.832Z",
+    "user": 1,
+    "products": [
+      17
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$6R8J34ElGscrWQiCByDSQk$YXh515TUeZX6lrQP6egr4+Y7oxf1nD54tFoedAm70xc=",
+    "last_login": "2025-11-12T13:12:31.554Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Александр",
+    "last_name": "Тананов",
+    "email": "afrika8759116@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-08-21T12:41:32Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$kgbfU64x0vlXd3if3kp1Lq$62KubcpMz6YGFeAZgMxkrVHtj7L7VhFc3U7kFxlk1to=",
+    "last_login": "2025-11-12T11:30:27.805Z",
+    "is_superuser": false,
+    "username": "Иван",
+    "first_name": "Иван",
+    "last_name": "Иванов",
+    "email": "ivan@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-10-27T10:05:57Z",
+    "groups": [],
+    "user_permissions": [
+      25
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$YTnD73ylK8ExVdneukBvHR$L0WrBhTCJR601Md1s2FUuDQs2g31EVQqG+OwzXa5fhQ=",
+    "last_login": "2025-11-10T10:51:02.322Z",
+    "is_superuser": false,
+    "username": "Паша",
+    "first_name": "Павел",
+    "last_name": "Сигаев",
+    "email": "sigai@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-10-27T11:53:50Z",
+    "groups": [],
+    "user_permissions": [
+      25
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$7FbnBQuZJZJGVJzVuwBLhK$LOWHmTeFasgMX8ttddY4IIg1vXwmJ4020CdwbJCYFOQ=",
+    "last_login": "2025-11-08T13:14:02.411Z",
+    "is_superuser": false,
+    "username": "sam",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-11-03T10:31:41Z",
+    "groups": [
+      7
+    ],
+    "user_permissions": [
+      4,
+      36,
+      28
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$ou4PvSlFTy8l4UuqXVDqkJ$bYtzRDQ3+G7vh3vntZpidpRsF3xvu1VFavprSS4w9jY=",
+    "last_login": "2025-11-10T11:09:47.482Z",
+    "is_superuser": false,
+    "username": "паша",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-03T10:33:06.906Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$lRFAg7QbtEZ0mI5UyCP4Ro$a+LZaqyYcS8+UxSt7BBHfM4w305JFg1d/3i6R9EtDjM=",
+    "last_login": "2025-11-10T11:06:59.786Z",
+    "is_superuser": false,
+    "username": "sergei",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-03T10:44:35Z",
+    "groups": [],
+    "user_permissions": [
+      26
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$uhSanYCrEcXCJiWViQFldQ$fG+MwlHeblcfF8Dqydx2NuwWEoujLziGQFUAteTqLDo=",
+    "last_login": "2025-11-10T10:47:59.171Z",
+    "is_superuser": false,
+    "username": "jon",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-03T11:20:28Z",
+    "groups": [],
+    "user_permissions": [
+      32
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$joPglFL4wipKBetZoPiFxX$rqqSCZ50Ry54/aOXfbptppeIDdAOxp8K5iekFUYo8DY=",
+    "last_login": "2025-11-10T10:50:41.177Z",
+    "is_superuser": false,
+    "username": "nick",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-04T10:37:56.957Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "example_group",
+    "permissions": [
+      9,
+      10,
+      11,
+      12
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "another_group",
+    "permissions": [
+      17,
+      18,
+      19,
+      20
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 7,
+  "fields": {
+    "name": "profile_manager",
+    "permissions": [
+      36
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 8,
+  "fields": {
+    "name": "test_group",
+    "permissions": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ]
+  }
+}
+]

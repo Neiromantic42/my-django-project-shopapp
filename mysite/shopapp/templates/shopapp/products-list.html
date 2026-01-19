@@ -1,0 +1,80 @@
+{% extends 'shopapp/base.html' %}
+
+{% load i18n %}
+
+{% block title %}
+    {% translate 'Products list' %}
+{% endblock %}
+
+{% block body %}
+    <h1>{% translate 'Products' %}:</h1>
+    {% if products %}
+        <div>
+            {% blocktranslate count product_count=products|length %}
+                There is only one product.
+                {% plural %}
+                There are {{ product_count }} products.
+            {% endblocktranslate %}
+        </div>
+
+        <div>
+            {% for product in products %}
+                <div>
+                    <p>
+                        <a href="{% url 'shopapp:products_details' pk=product.pk %}"
+                        >{% translate 'Name' context 'product name' %}: {{ product.name }}</a>
+                    </p>
+                    <p>{% translate 'Price' %}: {{ product.price }}</p>
+                    {% translate 'no discount yet' as no_discount %}
+                    <p>{% translate 'Discount' %}: {% firstof product.discount no_discount %}</p>
+
+                    {% if product.preview %}
+                        <img src="{{ product.preview.url }}" alt="{{ product.preview.name }}"
+                             width="150"
+                             height="150"
+                        >
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if perms.shopapp.add_product %}
+            <div>
+                <a href="{% url 'shopapp:product_create' %}"
+                   style="display: inline-block; padding: 10px 20px;
+                   background-color: chartreuse; color: black;
+                   text-decoration: none; border-radius: 5px;"
+                >{% translate 'Create a product' %}</a>
+            </div>
+        {% else %}
+            <h3 style="color: red">{% translate 'You do not have the right to create a product!' %}</h3>
+        {% endif %}
+
+    {% else %}
+        {% if perms.shopapp.add_product %}
+            {% url 'shopapp:product_create' as create_product_url %}
+            {% blocktranslate %}
+                <h3>No products yet</h3>
+                <a href="{{ create_product_url }}"
+                   style="display: inline-block; padding: 10px 20px;
+                   background-color: darkblue; color: white;
+                   text-decoration: none; border-radius: 5px;"
+                >Create a new one</a>
+            {% endblocktranslate %}
+        {% else %}
+            <h3 style="color: red">
+                {% translate 'You do not have the right to create a product!' %}
+            </h3>
+        {% endif %}
+    {% endif %}
+
+    <div>
+        <a href="{% url 'shopapp:order_create' %}"
+           style="display: inline-block; padding: 10px 20px;
+           background-color: blueviolet; color: white;
+           text-decoration: none; border-radius: 5px;
+           margin-top: 5px;"
+        >{% translate 'Create a new Order' %}</a>
+    </div>
+
+{% endblock %}

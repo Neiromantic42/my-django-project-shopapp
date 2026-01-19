@@ -1,0 +1,63 @@
+{% extends 'shopapp/base.html' %}
+
+{% load i18n %}
+
+{% block title %}
+    {% blocktranslate with product_pk=product.pk %}
+        Product № {{ product_pk }}
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block body %}
+    <h1>Product <strong>{{ product.name }}</strong></h1>
+    <div>
+        {% translate "Yes" as yes_text %}
+        {% translate "No" as no_text %}
+        {% with yes_no_str=yes_text|add:","|add:no_text %}
+            {% blocktranslate with desc=product.description price=product.price sale=product.discount arch=product.archived|yesno:yes_no_str %}
+                <div>Description: <em>{{ desc }}</em></div>
+                <div>Price: {{ price }}</div>
+                <div>Discount: {{ sale }}</div>
+                <div>Archived: {{ arch }}</div>
+            {% endblocktranslate %}
+        {% endwith %}
+
+    {% if product.images.all %}
+    	{% blocktranslate count product_img_count=product.images.all|length %}
+            There is only one picture.
+            {% plural %}
+            There are {{ product_img_count }} images
+        {% endblocktranslate %}
+    {% endif %}
+
+        {% if product.preview %}
+            <img src="{{ product.preview.url }}" alt="{{ product.preview.name }}"
+                 width="100"
+                 height="100"
+            >
+        {% endif %}
+        <h3>
+            {% for img in product.images.all %}
+                <div>
+                    <img src="{{ img.image.url }}" alt="{{ img.image.name }}"
+                         width="150"
+                         height="150"
+                    >
+                </div>
+                <div>{{ img.description }}</div>
+            {% empty %}
+                <div>{% translate 'No images uploaded yet' %}</div>
+            {% endfor %}
+        </h3>
+    </div>
+    <div>
+        <a href="{% url 'shopapp:product_update' pk=product.pk %}">{% translate 'Update product' %}: {{ product.name }}</a>
+    </div>
+
+    <div>
+        <a href="{% url 'shopapp:products_list' %}"> {% translate 'Return to the product page' %}</a>
+    </div>
+    <div>
+        <a href="{% url 'shopapp:product_delete' pk=product.pk %}"> {% translate 'Product archiving' %}: {{ product.name }}</a>
+    </div>
+{% endblock %}

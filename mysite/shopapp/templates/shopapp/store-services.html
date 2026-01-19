@@ -1,0 +1,27 @@
+{% extends 'shopapp/base.html' %}
+
+{% block title %}
+    Stor Services
+{% endblock %}
+
+{% block body %}
+    <h1>You are greeted by the store's service!</h1>
+
+    <div>
+        <ul>
+            {% for service in services %}
+                <li>
+                    Product name: {{ service.name|upper }}<br>
+                    Description: {{ service.description }}<br>
+                    Price: {{ service.price|floatformat:0 }}<br>
+                    {% if service.description|length_is:'22' %}
+                        <span>Lucky service of the service, 10% discount</span>
+                    {% endif %}
+                </li>
+                <br> <!--отступ между услугами -->
+            {% empty %}
+                There are no services here
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="shopapp.product" pk="1">
+        <field name="name" type="CharField">Macbook</field>
+        <field name="description" type="TextField">Ноутбук Мак бук</field>
+        <field name="price" type="DecimalField">200000.00</field>
+        <field name="discount" type="SmallIntegerField">5</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-08-29T11:33:11.273000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="7">
+        <field name="name" type="CharField">Iphone 17</field>
+        <field name="description" type="TextField">smartphone</field>
+        <field name="price" type="DecimalField">100000.00</field>
+        <field name="discount" type="SmallIntegerField">10</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-09-23T10:49:16.450000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField">products/product_7/preview/blyIphone.png</field>
+    </object>
+    <object model="shopapp.product" pk="8">
+        <field name="name" type="CharField">Ipad Air</field>
+        <field name="description" type="TextField">Просто хуета, кусок дерьма!</field>
+        <field name="price" type="DecimalField">87990.00</field>
+        <field name="discount" type="SmallIntegerField">50</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-09-24T10:29:47.603000+00:00</field>
+        <field name="archived" type="BooleanField">True</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="10">
+        <field name="name" type="CharField">JBL speaker</field>
+        <field name="description" type="TextField">Stereo speaker for listening to copper</field>
+        <field name="price" type="DecimalField">12500.00</field>
+        <field name="discount" type="SmallIntegerField">5</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-09-25T10:39:51.832000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField">products/product_10/preview/JBL.webp</field>
+    </object>
+    <object model="shopapp.product" pk="15">
+        <field name="name" type="CharField">HyperX cloud ll</field>
+        <field name="description" type="TextField">наушники игровые Проводная Игровая гарнитура с микрофоном , Красная
+        </field>
+        <field name="price" type="DecimalField">16582.00</field>
+        <field name="discount" type="SmallIntegerField">13</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-09-25T11:31:02.068000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField">
+            products/product_15/preview/ae67d26b764e1a6d60d28a5bfcdea6b1-600x600.jpg
+        </field>
+    </object>
+    <object model="shopapp.product" pk="17">
+        <field name="name" type="CharField">Screen protector for iPhone 14 Plus</field>
+        <field name="description" type="TextField">Защитное стекло на айфон</field>
+        <field name="price" type="DecimalField">1000.00</field>
+        <field name="discount" type="SmallIntegerField">0</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-10-23T10:46:06.574000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="18">
+        <field name="name" type="CharField">Iphone 16 PRO MAX</field>
+        <field name="description" type="TextField">A smartphone with 1 terabyte of internal memory and a titanium
+            case.
+        </field>
+        <field name="price" type="DecimalField">120000.00</field>
+        <field name="discount" type="SmallIntegerField">15</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-11-08T11:46:30.354000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="19">
+        <field name="name" type="CharField">Apple AirPods pro 3</field>
+        <field name="description" type="TextField">Беспроводные наушники, белые</field>
+        <field name="price" type="DecimalField">26399.00</field>
+        <field name="discount" type="SmallIntegerField">50</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">2</field>
+        <field name="created_at" type="DateTimeField">2025-11-10T10:50:07.425000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField">products/product_19/preview/111.jpg_500_iRGSr1G.webp</field>
+    </object>
+    <object model="shopapp.product" pk="22">
+        <field name="name" type="CharField">Xiaomi 15T Pro</field>
+        <field name="description" type="TextField">Xiaomi Смартфон Xiaomi 15T Pro Ростест (EAC) 12/512 ГБ, черный
+        </field>
+        <field name="price" type="DecimalField">74990.00</field>
+        <field name="discount" type="SmallIntegerField">10</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">1</field>
+        <field name="created_at" type="DateTimeField">2025-11-19T15:15:51.577772+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField">products/product_None/preview/xiami_p.webp</field>
+    </object>
+    <object model="shopapp.product" pk="24">
+        <field name="name" type="CharField">Smartwatches - mi band 10 ceramic version</field>
+        <field name="description" type="TextField">Спортивный браслет mi band 10 к керамическом корпусе</field>
+        <field name="price" type="DecimalField">6000.00</field>
+        <field name="discount" type="SmallIntegerField">5</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">1</field>
+        <field name="created_at" type="DateTimeField">2025-12-04T11:13:05.619899+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField">products/product_None/preview/Smartwatches_-_mi_band_10_ceramic_v.webp
+        </field>
+    </object>
+    <object model="shopapp.product" pk="25">
+        <field name="name" type="CharField">DJI Mini 3</field>
+        <field name="description" type="TextField">Мини квадрокоптер DJI Mini 3 c пультом DJI RC (НЕ PRO)</field>
+        <field name="price" type="DecimalField">49000.00</field>
+        <field name="discount" type="SmallIntegerField">10</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">1</field>
+        <field name="created_at" type="DateTimeField">2025-12-04T11:32:16.256843+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField">products/product_None/preview/dgi.webp</field>
+    </object>
+    <object model="shopapp.product" pk="32">
+        <field name="name" type="CharField">Smartphone 1</field>
+        <field name="description" type="TextField"></field>
+        <field name="price" type="DecimalField">199.00</field>
+        <field name="discount" type="SmallIntegerField">0</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-12-16T09:58:09.549528+00:00</field>
+        <field name="archived" type="BooleanField">True</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="33">
+        <field name="name" type="CharField">Smartphone 2</field>
+        <field name="description" type="TextField"></field>
+        <field name="price" type="DecimalField">299.00</field>
+        <field name="discount" type="SmallIntegerField">0</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-12-16T09:58:09.549544+00:00</field>
+        <field name="archived" type="BooleanField">True</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="34">
+        <field name="name" type="CharField">Smartphone 3</field>
+        <field name="description" type="TextField"></field>
+        <field name="price" type="DecimalField">399.00</field>
+        <field name="discount" type="SmallIntegerField">0</field>
+        <field name="created_by" rel="ManyToOneRel" to="auth.user">
+            <None></None>
+        </field>
+        <field name="created_at" type="DateTimeField">2025-12-16T09:58:09.549551+00:00</field>
+        <field name="archived" type="BooleanField">True</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+</django-objects>
