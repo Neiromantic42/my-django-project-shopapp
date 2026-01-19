@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+from os import getenv
+import logging.config
 from django.conf.global_settings import LOGGING, INTERNAL_IPS, CACHES, CACHE_MIDDLEWARE_SECONDS
 # from django.conf.global_settings import LOGIN_REDIRECT_URL, MEDIA_URL, MEDIA_ROOT, DEFAULT_FILE_STORAGE, USE_L10N, \
 #     LOCALE_PATHS, LANGUAGES
@@ -35,20 +36,29 @@ sentry_sdk.init(
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Путь к директории, где будет храниться база данных
+DATABASE_DIR = BASE_DIR / "database"  # Создаём объект Path для папки 'database' внутри проекта
+
+# Создаём папку для базы данных, если её ещё нет
+DATABASE_DIR.mkdir(exist_ok=True)  # Если папка уже существует, ошибок не будет
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rw+)gw2)w8u6e_g8yp2o!2i#ond@9d6xd+5+s-lm#w-2nx$+sj'
+SECRET_KEY = getenv(
+    "DJANGO_SECRET_KEY",
+    'django-insecure-rw+)gw2)w8u6e_g8yp2o!2i#ond@9d6xd+5+s-lm#w-2nx$+sj',
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = getenv("DJANGO_DEBUG", "0") == "1"
 
 ALLOWED_HOSTS = [
     "0.0.0.0",    # разрешаем подключение с любого интерфейса (для докера/сети)
     "127.0.0.1",  # разрешаем локальные подключения
-]
+] + getenv("DJANGO_ALLOWED_HOST", "").split(",")
 
 INTERNAL_IPS = [
     "127.0.0.1",  # внутренние IP для дебага, например django-debug-toolbar
@@ -132,7 +142,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATABASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -262,6 +272,8 @@ LOGFILE_NAME = BASE_DIR / "log.txt" # указываем куда писать �
 LOGFILE_SIZE = 1 * 1024 * 1024 # указываем максимальный размер файла, по достижению которого произойдет ротация логов
 LOGFILE_COUNT = 3 # указываем КОЛ-ВО файлов для ротаций 1 текущий 3 пред идущих
 
+LOGLEVEL = getenv("DJANGO_LOGLEVEL", "info").upper()
+
 LOGGING = {  # Основная настройка логирования Django, читается при старте проекта
 
     "version": 1,  # Версия схемы logging.dictConfig (в Django всегда 1)
@@ -293,7 +305,7 @@ LOGGING = {  # Основная настройка логирования Django
     "root": {  # Корневой логгер — получает все логи,
         # если у логгера нет собственной настройки
         "handlers": ["console", "logfile"], # Все логи отправляются в обработчик console и logfile
-        "level": "INFO",
+        "level": LOGLEVEL,
         # Минимальный уровень логов:
         # INFO, WARNING, ERROR, CRITICAL — будут выведены
         # DEBUG — проигнорируется

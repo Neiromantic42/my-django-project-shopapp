@@ -20,7 +20,7 @@ RUN pip install -r requirements.txt
 COPY mysite .
 
 # команда для запуска приложения внутри контейнера
-CMD ["python", "manage.py", "runserver"]
+CMD ["gunicorn", "mysite.wsgi:application", "--bind", "0.0.0.0:8000"]
 
 
 

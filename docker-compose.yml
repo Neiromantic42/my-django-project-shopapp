@@ -4,21 +4,29 @@ services: # Определяем список сервисов (контейне
     build:                   # Указываем как собирать образ (локальный Dockerfile)
       dockerfile: ./Dockerfile  # Путь к Dockerfile
     command:                 # Команда, которая выполняется при старте контейнера
-      - "python"             # Запускаем интерпретатор Python
-      - "manage.py"          # Используем manage.py для управления Django
-      - "runserver"          # Команда запуска сервера разработки
+      - gunicorn             # Запускаем Gunicorn (сервер WSGI)
+      - mysite.wsgi:application # Указываем точку входа WSGI приложения
+      - --bind         # Флаг, чтобы указать адрес/порт для Gunicorn
       - "0.0.0.0:8080"       # Слушаем все интерфейсы внутри контейнера на порту 8080
     ports:                   # Проброс портов между хостом и контейнером
-      - "8000:8080"          # Внешний порт 8000 → внутренний контейнера 8080
+      - "8000:8080"           # Слушаем все интерфейсы в контейнере на порту 8080
+    restart: always
+    env_file:
+      - .env
     volumes:                 # Примонтированные директории/файлы для постоянного хранения
-      - ./mysite/db.sqlite3:/app/db.sqlite3   # Подключаем файл базы данных SQLite
       - ./mysite/uploads:/app/uploads        # Подключаем папку с загруженными файлами
+      - ./mysite/database:/app/database    # Подключаем файл базы данных SQLite
 
+#    logging:
+#      driver: loki
+#      options:
+#        loki-url: http://localhost:3100/loki/api/v1/push
+##        loki-url: http://host.docker.internal:3100/loki/api/v1/push
     logging:
-      driver: loki
+      driver: "json-file"
       options:
-        loki-url: http://localhost:3100/loki/api/v1/push
-#        loki-url: http://host.docker.internal:3100/loki/api/v1/push
+        max-file: "10"
+        max-size: "200k"
 
   grafana: # Сервис для Grafana (дашборды и визуализация логов)
     image: grafana/grafana:12.4.0-20082909961-ubuntu  # Образ Grafana для Ubuntu
