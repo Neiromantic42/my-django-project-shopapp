@@ -1,0 +1,15 @@
+[project]
+name = "shopapp"
+version = "0.1.0"
+description = "Skillbox educational project"
+authors = [
+    {name = "Aleksandr Tananov",email = "afrika8759116@gmail.com"}
+]
+requires-python = ">=3.12"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
