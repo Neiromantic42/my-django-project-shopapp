@@ -54,6 +54,7 @@ SECRET_KEY = getenv(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv("DJANGO_DEBUG", "0") == "1"
+# DEBUG = True
 
 ALLOWED_HOSTS = [
     "0.0.0.0",    # разрешаем подключение с любого интерфейса (для докера/сети)
@@ -210,6 +211,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "blogapp" / "static",
 ]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # URL, по которому будут доступны загруженные пользователями файлы в браузере

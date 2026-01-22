@@ -1808,3 +1808,167 @@ TypeError: OrdersUserDataExport.get() got an unexpected keyword argument 'user_i
 2026-01-16 11:06:07,067 [INFO] shopapp.views: Загрузка из кеша
 2026-01-16 11:06:07,206 [INFO] shopapp.views: Загрузка из кеша
 2026-01-16 11:06:07,357 [INFO] shopapp.views: Загрузка из кеша
+2026-01-22 09:54:58,991 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:04:49,683 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:06:57,481 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:17:40,207 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:17:50,271 [WARNING] django.request: Not Found: /
+2026-01-22 10:17:51,263 [WARNING] django.request: Not Found: /favicon.ico
+2026-01-22 10:18:04,872 [DEBUG] shopapp.views: Product for shop index: {'time_running': 6736.199999618, 'products': [('laptop', 1999), ('Desktop', 2000), ('Smartphone', 6666)], 'items': 1}
+2026-01-22 10:18:04,874 [INFO] shopapp.views: Rendering shop-index.html
+2026-01-22 10:18:12,134 [WARNING] django.request: Not Found: /ru/shop/product
+2026-01-22 10:18:15,214 [ERROR] django.request: Internal Server Error: /ru/shop/products/
+Traceback (most recent call last):
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: shopapp_product.preview
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/sentry_sdk/integrations/django/views.py", line 38, in sentry_patched_render
+    return old_render(self)
+           ^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/sentry_sdk/utils.py", line 1841, in runner
+    return sentry_patched_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/sentry_sdk/integrations/django/templates.py", line 74, in rendered_content
+    return real_rendered_content.fget(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 332, in render
+    if match:
+       ^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 404, in __bool__
+    self._fetch_all()
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/sentry_sdk/utils.py", line 1841, in runner
+    return sentry_patched_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/sentry_sdk/integrations/django/__init__.py", line 645, in execute
+    result = real_execute(self, sql, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/PythonProjectDjango/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: shopapp_product.preview
+2026-01-22 10:20:41,592 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:22:44,140 [WARNING] django.request: Not Found: /media/products/product_7/preview/17.jpg
+2026-01-22 10:23:04,631 [WARNING] django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-22 10:23:09,571 [WARNING] django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-22 10:23:09,575 [WARNING] django.request: Not Found: /media/products/product_7/preview/17.jpg
+2026-01-22 10:23:22,078 [WARNING] django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-22 10:23:28,082 [WARNING] django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-22 10:23:30,123 [WARNING] django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-22 10:23:43,260 [WARNING] django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-22 10:23:43,261 [WARNING] django.request: Not Found: /media/products/product_7/images/17_WsVLvjE.jpg
+2026-01-22 10:25:27,430 [WARNING] django.request: Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-22 10:25:27,444 [WARNING] django.request: Not Found: /static/admin/css/base.css
+2026-01-22 10:25:27,476 [WARNING] django.request: Not Found: /static/admin/css/nav_sidebar.css
+2026-01-22 10:25:27,485 [WARNING] django.request: Not Found: /static/admin/css/dashboard.css
+2026-01-22 10:25:27,486 [WARNING] django.request: Not Found: /static/admin/css/dark_mode.css
+2026-01-22 10:25:27,490 [WARNING] django.request: Not Found: /static/admin/js/theme.js
+2026-01-22 10:25:27,498 [WARNING] django.request: Not Found: /static/admin/css/responsive.css
+2026-01-22 10:25:27,533 [WARNING] django.request: Not Found: /static/admin/js/nav_sidebar.js
+2026-01-22 10:25:27,571 [WARNING] django.request: Not Found: /static/admin/css/nav_sidebar.css
+2026-01-22 10:25:27,575 [WARNING] django.request: Not Found: /static/admin/css/dashboard.css
+2026-01-22 10:25:27,580 [WARNING] django.request: Not Found: /static/admin/css/responsive.css
+2026-01-22 10:46:00,097 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:46:03,027 [WARNING] django.request: Not Found: /
+2026-01-22 10:46:11,194 [WARNING] django.request: Not Found: /static/admin/css/base.css
+2026-01-22 10:46:11,218 [WARNING] django.request: Not Found: /static/admin/css/dark_mode.css
+2026-01-22 10:46:11,222 [WARNING] django.request: Not Found: /static/admin/css/nav_sidebar.css
+2026-01-22 10:46:11,223 [WARNING] django.request: Not Found: /static/admin/css/login.css
+2026-01-22 10:46:11,225 [WARNING] django.request: Not Found: /static/admin/js/theme.js
+2026-01-22 10:46:11,227 [WARNING] django.request: Not Found: /static/admin/css/responsive.css
+2026-01-22 10:46:11,239 [WARNING] django.request: Not Found: /static/admin/js/nav_sidebar.js
+2026-01-22 10:46:11,240 [WARNING] django.request: Not Found: /static/admin/css/nav_sidebar.css
+2026-01-22 10:46:11,241 [WARNING] django.request: Not Found: /static/admin/css/login.css
+2026-01-22 10:46:11,242 [WARNING] django.request: Not Found: /static/admin/css/responsive.css
+2026-01-22 10:49:53,390 [INFO] django.utils.autoreload: /home/user/PycharmProjects/PythonProjectDjango/prod/mysite/mysite/settings.py changed, reloading.
+2026-01-22 10:49:53,785 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:51:57,392 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:52:05,499 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 10:52:07,270 [WARNING] django.request: Not Found: /
+2026-01-22 11:14:22,016 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 11:18:24,543 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 11:18:26,599 [WARNING] django.request: Not Found: /
+2026-01-22 11:18:26,747 [WARNING] django.request: Not Found: /favicon.ico
+2026-01-22 11:18:36,785 [WARNING] django.request: Not Found: /media/products/product_15/preview/ae67d26b764e1a6d60d28a5bfcdea6b1-600x600_Izw0IKP.jpg
+2026-01-22 11:18:40,826 [WARNING] django.request: Not Found: /media/products/product_15/preview/ae67d26b764e1a6d60d28a5bfcdea6b1-600x600_Izw0IKP.jpg
+2026-01-22 11:19:05,457 [INFO] django.utils.autoreload: /home/user/PycharmProjects/PythonProjectDjango/prod/mysite/mysite/settings.py changed, reloading.
+2026-01-22 11:19:06,328 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 11:19:33,996 [INFO] django.utils.autoreload: /home/user/PycharmProjects/PythonProjectDjango/prod/mysite/mysite/settings.py changed, reloading.
+2026-01-22 11:19:34,510 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-01-22 11:19:41,109 [WARNING] django.request: Not Found: /media/products/product_7/images/17_WsVLvjE.jpg
