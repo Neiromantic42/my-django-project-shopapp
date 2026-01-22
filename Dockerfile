@@ -7,14 +7,18 @@ ENV PYTHONUNBUFFERED=1
 # Создаем директорию в которой будем работать
 WORKDIR /app
 
-# копируем зависимости с хостовой ммашины(с той машины где идет разработка приложения)
-COPY mysite/requirements.txt requirements.txt
-
 # Обновляем pip внутри контейнера до актуальной версии
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip "poetry==2.3.1"
 
-# Устанавливаем Python-зависимости проекта из файла requirements.txt
-RUN pip install -r requirements.txt
+# Настраиваем Poetry так, чтобы не создавалось виртуальное окружение внутри контейнера
+# зависимости будут установлены глобально в контейнере
+RUN poetry config virtualenvs.create false --local
+
+# Копируем файлы управления зависимостями Poetry (pyproject.toml и poetry.lock) в контейнер
+COPY pyproject.toml poetry.lock ./
+
+# Устанавливаем все зависимости проекта через Poetry
+RUN poetry install --no-root
 
 # копируем весь джанго проект mysite(где лежат все приложения проекта) в(.) - текущую директорию
 COPY mysite .
